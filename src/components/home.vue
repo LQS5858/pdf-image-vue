@@ -24,6 +24,7 @@
                    ref="pdfUpload"
                    drag>
           <i class="el-icon-upload"></i>
+          <span>上传说明</span>
           <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
           <div class="el-upload__tip"
                slot="tip">只能上传PDF文件</div>
@@ -49,7 +50,8 @@ export default {
       loading: false,
       scale: 2,
       interval: 0,
-      renderImgArr: []
+      renderImgArr: [],
+      ds: []
     };
   },
   methods: {
@@ -72,6 +74,7 @@ export default {
         let pages = pdf.numPages //声明一个pages变量等于当前pdf文件的页数
         for (let i = 1; i <= pages; i++) { //循环页数
           let canvas = document.createElement('canvas')
+          canvas.width = 200
           let page = await pdf.getPage(i) //调用getPage方法传入当前循环的页数,返回一个page对象
           let scale = this.scale;//缩放倍数，1表示原始大小
           let viewport = page.getViewport({ scale });
@@ -83,6 +86,7 @@ export default {
             viewport: viewport
           };
           await page.render(renderContext)
+          canvas.setAttribute('swale')
           canvas.className = `canvas` //给canvas节点定义一个class名,这里我取名为canvas
           pdfList.appendChild(canvas) //插入到pdfList节点的最后
           this.canvasArr.push(canvas)
@@ -104,7 +108,7 @@ export default {
     },
     addLisenter (dom) {
       dom.addEventListener('click', (e) => {
-        console.log('---e--', e.target);
+
         const base64 = e.target.toDataURL('image/png')
         let blob = this.dataUrlToBold(base64);
         let obj_url = URL.createObjectURL(blob); // 消除Chrome下文件太大 导致下载失败（网络失败）的问题
