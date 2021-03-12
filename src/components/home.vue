@@ -86,7 +86,7 @@ export default {
             viewport: viewport
           };
           await page.render(renderContext)
-          canvas.setAttribute('swale')
+          // canvas.setAttribute('swale')
           canvas.className = `canvas` //给canvas节点定义一个class名,这里我取名为canvas
           pdfList.appendChild(canvas) //插入到pdfList节点的最后
           this.canvasArr.push(canvas)
