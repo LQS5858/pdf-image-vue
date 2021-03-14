@@ -4,6 +4,7 @@ import Http from '@/assets/js/http'
 import "@/plugins"
 import router from '@/router'
 import 'element-ui/lib/theme-chalk/index.css';
+import './registerServiceWorker'
 
 
 Vue.config.productionTip = false

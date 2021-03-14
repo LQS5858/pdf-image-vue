@@ -3,7 +3,7 @@
     <div class="bg">
       <div>
         <div class="row">
-          <p>移除PDF首尾间隔</p>
+          <p>移除PDF首尾间隔(sw)</p>
           <el-input v-model.trim="interval"
                     clearable
                     @input="interval=interval.replace(/[^\d.]/g,'')"></el-input>
