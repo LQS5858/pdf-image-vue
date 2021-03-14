@@ -1,5 +1,6 @@
 const { name } = require('./package.json')
 module.exports = {
+    publicPath: './',
     configureWebpack: {
         output: {
             // qiankun微应用必须添加这个---把子应用打包成 umd 库格式
