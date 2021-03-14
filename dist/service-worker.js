@@ -1,4 +1,4 @@
-importScripts("https://cdn.bootcdn.net/ajax/libs/workbox-sw/5.1.4/workbox-sw.js", "precache-manifest.7fdea62ae95389865b506577f8562471.js");
+importScripts("https://cdn.bootcdn.net/ajax/libs/workbox-sw/5.1.4/workbox-sw.js", "precache-manifest.0b277add594e90d13f3f3df7fbdc44d9.js");
 
 // 缓存web的css资源
 workbox.routing.registerRoute(

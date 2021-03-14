@@ -5,14 +5,13 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
     mode: 'history',
-    base: '/pdf',
     routes: [
         {
             path: '*',
-            redirect: '/image'
+            redirect: '/pdf'
         },
         {
-            path: '/image',
+            path: '/pdf',
             component: () => import('@/components/home')
         }
     ]
