@@ -33,7 +33,7 @@ module.exports = {
             // swSrc is required in InjectManifest mode.
             swSrc: './src/service-worker.js',
             importWorkboxFrom: 'disabled',
-            importScripts: 'https://cdn.bootcdn.net/ajax/libs/workbox-sw/5.1.4/workbox-sw.js'
+            importScripts: 'https://cdn.bootcdn.net/ajax/libs/workbox-sw/6.0.0-alpha.3/workbox-sw.js'
             // ...other Workbox options...
         }
     }
