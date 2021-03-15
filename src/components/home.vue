@@ -3,7 +3,7 @@
     <div class="bg">
       <div>
         <div class="row">
-          <p>移除PDF首尾间隔</p>
+          <p>移除PDF首尾间隔(sw)</p>
           <el-input v-model.trim="interval"
                     clearable
                     @input="interval=interval.replace(/[^\d.]/g,'')"></el-input>
@@ -24,7 +24,6 @@
                    ref="pdfUpload"
                    drag>
           <i class="el-icon-upload"></i>
-          <span>上传说明</span>
           <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
           <div class="el-upload__tip"
                slot="tip">只能上传PDF文件</div>

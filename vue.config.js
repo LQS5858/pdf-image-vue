@@ -20,5 +20,21 @@ module.exports = {
         headers: {
             'Access-Control-Allow-Origin': '*'
         }
+    },
+    pwa: {
+        name: 'easy-front-vue-cli3',
+        themeColor: '#4DBA87',
+        msTileColor: '#000000',
+        appleMobileWebAppCapable: 'yes',
+        appleMobileWebAppStatusBarStyle: 'black',
+        // configure the workbox plugin (GenerateSW or InjectManifest)
+        workboxPluginMode: 'InjectManifest',
+        workboxOptions: {
+            // swSrc is required in InjectManifest mode.
+            swSrc: './src/service-worker.js',
+            // importWorkboxFrom: 'disabled',
+            // importScripts: 'https://cdn.bootcdn.net/ajax/libs/workbox-sw/6.0.0-alpha.3/workbox-sw.js'
+            // ...other Workbox options...
+        }
     }
 }
