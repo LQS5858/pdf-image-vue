@@ -1,3 +1,10 @@
+
+
+// 设置相应缓存的名字的前缀和后缀
+workbox.core.setCacheNameDetails({
+    prefix: 'cache-exp',
+    suffix: 'v1.0.0',
+})
 // 缓存web的css资源
 workbox.routing.registerRoute(
     // Cache CSS files
@@ -28,7 +35,7 @@ workbox.routing.registerRoute(
         plugins: [
             new workbox.expiration.Plugin({
                 maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 设置缓存有效期为30天
+                maxAgeSeconds: 1 * 24 * 60 * 60 // 设置缓存有效期为30天
             })
         ]
     })
