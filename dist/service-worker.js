@@ -20,7 +20,7 @@ workbox.routing.registerRoute(
     // Cache CSS files
     /.*\.css/,
     // 使用缓存，但尽快在后台更新
-    workbox.strategies.staleWhileRevalidate({
+    new workbox.strategies.StaleWhileRevalidate({
         // 使用自定义缓存名称
         cacheName: 'css-cache'
     })
@@ -31,7 +31,7 @@ workbox.routing.registerRoute(
     // 缓存JS文件
     /.*\.js/,
     // 使用缓存，但尽快在后台更新
-    workbox.strategies.staleWhileRevalidate({
+    new workbox.strategies.StaleWhileRevalidate({
         // 使用自定义缓存名称
         cacheName: 'js-cache'
     })
@@ -40,7 +40,7 @@ workbox.routing.registerRoute(
 // 缓存web的图片资源
 workbox.routing.registerRoute(
     /\.(?:png|gif|jpg|jpeg|svg)$/,
-    workbox.strategies.staleWhileRevalidate({
+    new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'images',
         plugins: [
             new workbox.expiration.Plugin({
@@ -54,7 +54,7 @@ workbox.routing.registerRoute(
 // 我们很多资源在其他域名上，比如cdn、oss等，这里做单独处理，需要支持跨域
 workbox.routing.registerRoute(
     /^https:\/\/cdn\.my\.com\/.*\.(jpe?g|png|gif|svg)/,
-    workbox.strategies.staleWhileRevalidate({
+    new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'cdn-images',
         plugins: [
             new workbox.expiration.Plugin({
