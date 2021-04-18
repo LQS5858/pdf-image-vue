@@ -6,7 +6,7 @@ import router from '@/router'
 import 'element-ui/lib/theme-chalk/index.css';
 import './registerServiceWorker'
 
-console.log('deploy');
+console.log('deploy update');
 Vue.config.productionTip = false
 Vue.prototype.$http = Http
 
