@@ -1,5 +1,5 @@
 name: deploy
-#git token  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
+#git token   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
 
 on:
   push:
@@ -23,11 +23,19 @@ jobs:
         run: npm run build # 打包
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+        # uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+
         with:
-          publish_dir: ./dist # 部署打包后的 dist 目录
-          github_token: ${{ secrets.VUE_PDF_DEPLOY }} # secret 名
-          # user_name: ${{ secrets.MY_USER_NAME }}
-          # user_email: ${{ secrets.MY_USER_EMAIL }}
-          commit_message: Update deploy Starter # 部署时的 git 提交信息，自由填写
+          # publish_dir: ./dist # 部署打包后的 dist 目录
+          # github_token: ${{ secrets.VUE_PDF_DEPLOY }} # secret 名
+          # # user_name: ${{ secrets.MY_USER_NAME }}
+          # # user_email: ${{ secrets.MY_USER_EMAIL }}
+          # commit_message: Update deploy Starter # 部署时的 git 提交信息，自由填写
+          # # 该workflow需要操作repo，因此需要一个密钥，下面会讲到如何获取这个密钥
           # 该workflow需要操作repo，因此需要一个密钥，下面会讲到如何获取这个密钥
+          ACCESS_TOKEN: ${{ secrets.VUE_PDF_DEPLOY }}
+          # 发布到的分支
+          BRANCH: gh-pages
+          # 要发布的文件夹
+          FOLDER: dist
