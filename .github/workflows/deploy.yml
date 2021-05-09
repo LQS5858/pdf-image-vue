@@ -1,5 +1,5 @@
 name: deploy
-#git token  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
+#git token  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
 
 on:
   push:
