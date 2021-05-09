@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "homepage": "https://lqs5858.github.io/pdf-image-vue/#/pdf",
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "axios": "^0.21.1",
