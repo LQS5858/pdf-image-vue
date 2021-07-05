@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/pdf",
+    "start_url": "/pdf-image-vue/#/pdf",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#4DBA87"
